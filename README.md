@@ -4,7 +4,7 @@
 
 Code and results for the paper:
 
-> Mehar Ali, Naveed Ikram. *Separating clinical signal from missingness shortcuts in multimodal skin-lesion classification: a leakage-controlled reliability evaluation on PAD-UFES-20.* Manuscript under submission. The full citation will be added after publication.
+> Mehar Ali. *Separating clinical signal from missingness shortcuts in multimodal skin-lesion classification: a leakage-controlled reliability evaluation on PAD-UFES-20.* Manuscript under submission. The full citation will be added after publication.
 
 The notebook compares image-only, metadata-only and four image–metadata fusion models (early concatenation, late fusion, cross-attention and MetaBlock-style gating), each with and without modality dropout, on the public PAD-UFES-20 dataset of smartphone skin-lesion images with patient metadata. The evaluation is patient-grouped, leakage-controlled and focused on reliability:
 
