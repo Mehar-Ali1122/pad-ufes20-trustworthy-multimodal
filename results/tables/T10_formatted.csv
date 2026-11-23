@@ -1,0 +1,7 @@
+Model,Metric,Patient-grouped split,Image-level split,Difference (image-level − grouped),p
+Image only,Balanced accuracy,0.644 [0.612–0.676],0.672 [0.639–0.702],0.027 [-0.003 to 0.058],0.080
+Image only,Macro-F1,0.635 [0.604–0.664],0.669 [0.638–0.696],0.034 [0.006–0.062],0.017
+Image only,Macro AUROC (OvR),0.893 [0.877–0.908],0.906 [0.894–0.918],0.013 [0.002–0.025],0.022
+Metadata only (GBM),Balanced accuracy,0.633 [0.596–0.669],0.703 [0.667–0.735],0.069 [0.037–0.100],<0.001
+Metadata only (GBM),Macro-F1,0.611 [0.577–0.642],0.678 [0.644–0.707],0.067 [0.039–0.094],<0.001
+Metadata only (GBM),Macro AUROC (OvR),0.911 [0.899–0.922],0.942 [0.933–0.949],0.031 [0.023–0.039],<0.001

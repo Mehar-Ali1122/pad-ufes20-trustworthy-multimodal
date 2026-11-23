@@ -1,0 +1,36 @@
+characteristic,value_text,value_numeric
+Images,2298,2298.0
+Patients,1373,1373.0
+Lesions (distinct patient–lesion identifier pairs),1891,1891.0
+Distinct lesion-identifier values,1641,1641.0
+Lesion-identifier values occurring under more than one patient,250,250.0
+Diagnostic classes,6,6.0
+Exact duplicate images: images (groups),32 (16),32.0
+Duplicate groups spanning more than one patient,0,0.0
+"Class ACK: images, n (%)",730 (31.8),730.0
+"Class BCC: images, n (%)",845 (36.8),845.0
+"Class MEL: images, n (%)",52 (2.3),52.0
+"Class NEV: images, n (%)",244 (10.6),244.0
+"Class SCC: images, n (%)",192 (8.4),192.0
+"Class SEK: images, n (%)",235 (10.2),235.0
+Images per patient: median (min–max),1 (1–10),1.0
+"Images per patient: more than one, n (%)",544 (39.6),544.0
+Images per lesion: median (min–max),1 (1–6),1.0
+"Images per lesion: more than one, n (%)",361 (19.1),361.0
+Lesions per patient: median (min–max),1 (1–8),1.0
+"Lesions per patient: more than one, n (%)",355 (25.9),355.0
+Metadata fields used as model inputs (numeric / categorical),21 (4 / 17),21.0
+Metadata fields with at least one missing value,19,19.0
+"Missing values over all input fields, %",23.8,23.79916283310539
+"Images with at least 50% of input fields missing, n (%)",804 (35.0),804.0
+"  of which cancer images, n (% of cancer images)",0 (0.0),0.0
+"  of which non-cancer images, n (% of non-cancer images)",804 (66.5),804.0
+"Fitzpatrick type 1: images, n (%)",153 (6.7),153.0
+"Fitzpatrick type 2: images, n (%)",876 (38.1),876.0
+"Fitzpatrick type 3: images, n (%)",392 (17.1),392.0
+"Fitzpatrick type 4: images, n (%)",62 (2.7),62.0
+"Fitzpatrick type 5: images, n (%)",10 (0.4),10.0
+"Fitzpatrick type 6: images, n (%)",1 (0.0),1.0
+"Fitzpatrick type missing: images, n (%)",804 (35.0),804.0
+"Original image width, pixels: median (min–max)",780 (147–3474),779.5
+"Original image height, pixels: median (min–max)",780 (147–3476),779.5

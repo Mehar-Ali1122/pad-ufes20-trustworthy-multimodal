@@ -1,0 +1,28 @@
+Quality-control report  |  2026-11-17 10:50 UTC  |  configuration 6bef845303cf
+====================================================================================================
+[PASS] Zero patient overlap between train, validation and test in every fold
+        5 grouped splits checked; patients shared between train / validation / test: 0; identical images shared between train/validation and test: 0
+[PASS] Preprocessing objects fitted only on training indices
+        10 saved pipelines equal a refit on training rows only; fit ids disjoint from validation and test rows
+[PASS] No test-fold data used for early stopping, temperature scaling or thresholds
+        90 runs: model selection, temperature scaling and thresholds use exactly the validation parts, which are disjoint from the test folds (provenance audit; temperatures re-fitted from the validation files match)
+[PASS] All metric functions validated against scikit-learn on a small test case
+        60 metric comparisons with scikit-learn agree (1e-9); ECE, AURC, Brier, DeLong AUC and Holm match reference implementations
+[PASS] Every figure exists in both widths and all formats, with pixel widths matching 90 mm and 190 mm at 600 dpi
+        20 figure/width combinations: PNG, TIFF, PDF and SVG exist; raster widths are 2126 px (90 mm) and 4488 px (190 mm) at 600 dpi (read back with PIL)
+[PASS] PNG dpi metadata equals 600 and mode is RGB with no alpha channel
+        20 PNG files: dpi metadata 600 (stored as whole pixels per metre, i.e. within 0.01 dpi), mode RGB, no alpha channel; TIFF files RGB with LZW compression; PDF files contain no Type 3 fonts
+[PASS] Minimum font size >= 7 pt and no artist with alpha < 1
+        smallest font over all figures: 7 pt (limit 7 pt); smallest artist alpha: 1; font family: Arial
+[SKIP] Figure F10
+        not produced: best weights of image_only are not on disk for folds [1, 2, 3, 4] (they were not kept when it was trained: set KEEP_BEST_WEIGHTS to 'gradcam_model' or 'all', delete that model's _DONE.json files for these folds and rerun Part 6)
+[PASS] Table values match the saved out-of-fold prediction files when recomputed
+        286 table values recomputed from predictions/oof_grouped_*.csv with scikit-learn or reference code agree with the exported tables (T2 pooled estimates and fold mean/SD of balanced accuracy, T4 Brier and ECE before/after scaling, T5 at 0% masking, T6 subgroup sizes)
+[SKIP] Table T8
+        not produced: the literature file literature_baselines.csv has no rows yet; fill it from the original papers and rerun Parts 15-17
+[PASS] No NaN or placeholder text in any exported table or caption
+        52 exported table and caption files contain no NaN or placeholder text (uncomputable values are written as 'n/a (n = k)')
+[PASS] Required tables T1-T5, T7 and T9 were exported
+        all present
+[PASS] Results are reportable
+        FAST_MODE off; 10000 bootstrap resamples; configuration hash 6bef845303cf

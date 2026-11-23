@@ -1,0 +1,14 @@
+# Versions of the final analysis run (Google Colab, Python 3.13, CUDA 13.0, NVIDIA A100)
+# The notebook installs timm, lightgbm and python-docx at these versions itself (Part 1);
+# the other packages were the Colab defaults at the time of the run.
+torch==2.14.1
+torchvision==0.29.1
+timm==1.0.31
+numpy==2.4.6
+pandas==2.2.3
+scipy==1.16.3
+scikit-learn==1.6.1
+lightgbm==4.7.0
+matplotlib==3.10.0
+Pillow==11.3.0
+python-docx==1.2.0

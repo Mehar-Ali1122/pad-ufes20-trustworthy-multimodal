@@ -1,0 +1,5 @@
+Predictor,Balanced accuracy (6 classes),Macro AUROC,Cancer sensitivity,Cancer specificity
+Rule without any model: at least 50% of fields missing ⇒ non-cancer,not defined (binary rule),not defined (binary rule),1.000 [1.000–1.000],0.665 [0.627–0.702]
+All fields with missingness indicators (metadata-only baseline),0.633 [0.596–0.669],0.911 [0.899–0.922],0.900 [0.875–0.923],0.863 [0.835–0.889]
+"Missingness pattern only (one indicator per field, no values)",0.343 [0.316–0.368],0.747 [0.731–0.764],0.975 [0.962–0.987],0.683 [0.646–0.719]
+"Low-missingness fields only (age, region, itch, hurt, bleed, elevation)",0.525 [0.488–0.562],0.821 [0.801–0.839],0.686 [0.652–0.720],0.753 [0.723–0.782]

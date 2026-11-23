@@ -1,0 +1,31 @@
+setting,value
+Cross-validation,"1 × 5-fold StratifiedGroupKFold grouped by patient; inner validation split 1/5 of each training fold, grouped by patient"
+Random seed (base),42
+Backbone (timm identifier),convnext_tiny.fb_in1k; pretrained = True
+Image input,cache 256 × 256 px (squash); network input 224 × 224 px
+Training augmentation,"random resized crop (scale 0.6–1.0, ratio 0.8–1.25), horizontal and vertical flip, colour jitter (brightness 0.1, contrast 0.1, saturation 0.1, hue 0.02)"
+Evaluation view,"resize to network input, no test-time augmentation"
+Optimiser,"AdamW; learning rate 0.0001 (backbone), 0.001 (new layers); weight decay 0.05 (not on biases and normalisation parameters)"
+Schedule,"2 warm-up epochs (linear), then cosine decay; at most 30 epochs"
+Batch size,32 × 1 accumulation steps = 32 effective
+Regularisation,dropout 0.3; gradient-norm clipping 1; label smoothing 0
+Mixed precision,torch.amp autocast and gradient scaling
+Class imbalance,"class-weighted cross-entropy, weight = n / (K · n_k) from the training part of each fold (also used as sample weights for gradient boosting)"
+Model selection,highest validation balanced accuracy; early stopping after 8 epochs without improvement
+Fusion head sizes,metadata MLP 128; fusion dimension 256; cross-attention heads 4
+Modality dropout,"all fields dropped with probability 0.25; otherwise, with probability 0.5, each field dropped with a per-sample rate from U(0, 1)"
+Metadata preprocessing,fitted on the training part of each fold: median imputation + missingness indicators + standardisation (numeric); explicit missing category + one-hot (categorical)
+Metadata input fields,"21: age, fitspatrick, diameter_1, diameter_2, smoke, drink, background_father, background_mother, pesticide, gender, skin_cancer_history, cancer_history, has_piped_water, has_sewage_system, region, itch, grew, hurt, changed, bleed, elevation"
+Gradient boosting (LightGBM),"n_estimators = 2000, learning_rate = 0.03, num_leaves = 15, min_child_samples = 10, subsample = 0.8, subsample_freq = 1, colsample_bytree = 0.8, reg_lambda = 1.0; early stopping 100 rounds on validation log-loss; 4 masked copies for the missingness-augmented variant"
+Late fusion,"log-linear pooling of image-only and metadata-model probabilities; image weight chosen on validation data from {0, 0.05, …, 1}"
+Calibration,"temperature scaling, one temperature per fold fitted on validation data"
+Sensitivity models (R),"same architectures and settings with the metadata input restricted to 6 low-missingness fields: age, region, itch, hurt, bleed, elevation"
+Bootstrap,"patient-level cluster bootstrap, 10000 resamples, 95% percentile intervals"
+Trainable parameters: Cross-attention,"28,758,630"
+Trainable parameters: Cross-attention + MD,"28,758,630"
+Trainable parameters: Early concatenation,"28,080,614"
+Trainable parameters: Early concatenation + MD,"28,080,614"
+Trainable parameters: Image only,"27,826,278"
+Trainable parameters: MetaBlock-style,"27,961,446"
+Trainable parameters: MetaBlock-style + MD,"27,961,446"
+Selected epoch across runs: median (min–max),7 (4–17)
