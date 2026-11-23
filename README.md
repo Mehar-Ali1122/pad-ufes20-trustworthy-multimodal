@@ -1,5 +1,7 @@
 # Trustworthy multimodal skin-lesion diagnosis on PAD-UFES-20
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24454995.svg)](https://doi.org/10.5281/zenodo.24454995)
+
 Code and results for the paper:
 
 > Mehar Ali, Naveed Ikram. *Separating clinical signal from missingness shortcuts in multimodal skin-lesion classification: a leakage-controlled reliability evaluation on PAD-UFES-20.* Manuscript under submission. The full citation will be added after publication.
