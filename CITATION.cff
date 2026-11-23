@@ -6,10 +6,6 @@ authors:
     given-names: "Mehar"
     affiliation: "Riphah Institute of Systems Engineering (RISE), Riphah International University"
     email: "alimehron@gmail.com"
-  - family-names: "Ikram"
-    given-names: "Naveed"
-    affiliation: "Riphah Institute of Systems Engineering (RISE), Riphah International University"
-    email: "naveed.ikram@riphah.edu.pk"
 version: "1.0.0"
 date-released: "2026-11-23"
 license: MIT
